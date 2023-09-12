@@ -212,4 +212,4 @@ contract Functions7 {
         return newName;
     }
 }
-
+ 

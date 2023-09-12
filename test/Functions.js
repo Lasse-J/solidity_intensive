@@ -54,7 +54,7 @@ describe('Functions', () => {
     let contract
 
     beforeEach(async () => {
-      const Contract = await ethers.getContractFactory('Functions3')
+      const Contract = await ethers.getContractFactory('Functions2')
       contract = await Contract.deploy()
     })
 
@@ -219,7 +219,7 @@ describe('Functions', () => {
         .withArgs('New name')
     })
 
-    it('can read return values from write functions inside the conract', async () => {
+    it('can read return values from write functions inside the contract', async () => {
       let transaction = await contract.setName3()
       let result = await transaction.wait()
       await expect(transaction).to.emit(contract, 'NameChanged')

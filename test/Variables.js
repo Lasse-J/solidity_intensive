@@ -18,7 +18,7 @@ describe('Variables', () => {
   })
 
   describe('Example 2', () => {
-    it('domonstrates the constructor sets the state variable', async () => {
+    it('demonstrates the constructor sets the state variable', async () => {
       const Contract = await ethers.getContractFactory('Variables2')
       let contract = await Contract.deploy('Example 2')
       expect(await contract.name()).to.equal('Example 2')
@@ -91,6 +91,39 @@ describe('Variables', () => {
       let result = await contract.getBlockInfo()
       // Uncomment this to view return values in console
       // console.log(result)
+    })
+  })
+
+  describe('Example 6', () => {
+    let contract
+
+    beforeEach(async () => {
+      const Contract = await ethers.getContractFactory('Variables6')
+      contract = await Contract.deploy()
+    })
+
+    it('demonstrates no visibility', async () => {
+      const Contract2 = await ethers.getContractFactory('Variables7')
+      contract2 = await Contract2.deploy()
+      expect(await contract2.getName1()).to.equal("Name 1")
+    })
+
+    it('demonstrates private visibility', async () => {
+      expect(await contract.getName2()).to.equal("Name 2")
+    })
+
+    it('demonstrates internal visibility', async () => {
+      const Contract2 = await ethers.getContractFactory('Variables7')
+      contract2 = await Contract2.deploy()
+      expect(await contract2.getName3()).to.equal("Name 3")
+    })
+
+    it('demonstrates public visibility', async () => {
+      expect(await contract.getName4()).to.equal("Name 4")
+
+      const Contract2 = await ethers.getContractFactory('Variables7')
+      contract2 = await Contract2.deploy()
+      expect(await contract2.getName44()).to.equal("Name 4")
     })
   })
 })

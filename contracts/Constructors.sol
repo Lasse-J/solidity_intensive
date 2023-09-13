@@ -51,7 +51,7 @@ contract Constructors5 is Parent1 {
     // Do not declare a constructor here
 }
 
-// Constructors can extend behavior from parent contstructor
+// Constructors can extend behavior from parent constructor
 contract Parent2 {
     string public name;
 

@@ -56,6 +56,7 @@ describe('Constructors', () => {
       const Contract = await ethers.getContractFactory('Constructors6')
       let contract = await Contract.deploy('Example 6', 'This contract inherits from Parent 2')
       expect(await contract.name()).to.equal('Example 6')
+      expect(await contract.description()).to.equal('This contract inherits from Parent 2')
     })
   })
 })

@@ -16,6 +16,7 @@ describe('Operators', () => {
       expect(await contract.increment(1)).to.equal(2)
       expect(await contract.decrement(2)).to.equal(1)
       expect(await contract.mathExample()).to.equal(6)
+      expect(await contract.myMath(1,2,3)).to.equal(1)
     })
   })
 
@@ -38,6 +39,7 @@ describe('Operators', () => {
       expect(await contract.ltOrEq(1,1)).to.equal(true)
       expect(await contract.ltOrEq(2,1)).to.equal(false)
       expect(await contract.checkAddress()).to.equal(false)
+//      expect(await contract.checkStrings()).to.equal(true)
     })
   })
 
@@ -54,6 +56,7 @@ describe('Operators', () => {
       expect(await contract.not(true)).to.equal(false)
       expect(await contract.not(false)).to.equal(true)
       expect(await contract.comparisonExample()).to.equal(true)
+      expect(await contract.comparison2()).to.equal(true)
     })
   })
 })

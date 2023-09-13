@@ -51,6 +51,11 @@ contract Operators1 {
         a --; // 6
         return a;
     }
+
+    function myMath(uint a, uint b, uint c) external pure returns(uint) {
+        return a + b / c;
+    }
+
 }
 
 // Comparison
@@ -88,11 +93,17 @@ contract Operators2 {
         address address2 = 0xe5c430b2Dd2150a20f25C7fEde9981f767A48A3c;
         return(address1 == address2);
     }
+
+//    function checkStrings() external pure returns(bool) {
+//        string memory string1 = 'Hello World';
+//        string memory string2 = 'Hello World';
+//        return(string1 == string2);
+//    }
 }
 
-// Locial Operators
+// Logical Operators
 // Homework: try implementing more of these
-// E.g. try checkingn expression equality like 1 + 1 == 2
+// E.g. try checking expression equality like 1 + 1 == 2
 contract Operators3 {
     function and(bool a, bool b) external pure returns(bool) {
         return a && b;
@@ -108,5 +119,9 @@ contract Operators3 {
 
     function comparisonExample() external pure returns(bool) {
         return (1 + 1 == 2) && (2 + 2 == 4);
+    }
+
+    function comparison2() external pure returns(bool) {
+        return (-1 - -2 == 1) && (1 + 1 == 2);
     }
 }

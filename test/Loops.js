@@ -5,7 +5,7 @@ describe('Loops', () => {
 
   describe('Example 1', () => {
 
-    it('demonsrates a for loop', async () => {
+    it('demonstrates a FOR loop', async () => {
       const Contract = await ethers.getContractFactory('Loops1')
       let contract = await Contract.deploy()
       expect(await contract.countEvenNumbers()).to.equal(5)
@@ -14,7 +14,7 @@ describe('Loops', () => {
 
   describe('Example 2', () => {
 
-    it('demonsrates a for loop', async () => {
+    it('demonstrates a WHILE loop', async () => {
       const Contract = await ethers.getContractFactory('Loops2')
       let contract = await Contract.deploy()
       let transaction = await contract.logNumbers()
@@ -29,5 +29,4 @@ describe('Loops', () => {
         .withArgs('4')
     })
   })
-
 })

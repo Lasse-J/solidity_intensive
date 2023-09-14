@@ -18,7 +18,17 @@ describe('Structs', () => {
       expect(result[1]).to.equal('Charles Dickens')
       expect(result[2]).to.equal(false)
 
-      // TOOD: homework - check the other books
+      // TODO: homework - check the other books
+      result = await contract.get(1);
+      expect(result[0]).to.equal('Les Miserables')
+      expect(result[1]).to.equal('Victor Hugo')
+      expect(result[2]).to.equal(false)
+
+      result = await contract.get(2);
+      expect(result[0]).to.equal('The Hobbit')
+      expect(result[1]).to.equal('J.R.R. Tolkien')
+      expect(result[2]).to.equal(false)
+
 
       // Complete a book
       await contract.complete(0)
@@ -26,5 +36,4 @@ describe('Structs', () => {
       expect(result[2]).to.equal(true)
     })
   })
-
 })

@@ -5,9 +5,9 @@ import "hardhat/console.sol";
 
 // Mapping examples (key value pairs)
 contract Mappings1 {
-    mapping(uint => string) public names; // Mapping of string like a databse
-    mapping(uint => address) public addresses; // Mapping of string like a databse
-    mapping(address => uint) public balances; // Mapping of string like a databse
+    mapping(uint => string) public names; // Mapping of string like a database
+    mapping(uint => address) public addresses; // Mapping of string like a database
+    mapping(address => uint) public balances; // Mapping of string like a database
     mapping(address => bool) public hasVoted; // Tracks whether a user has voted
 
     // Add values to the mapping in the constructor
@@ -38,7 +38,7 @@ contract Mappings2 {
     mapping(uint => Book) public books;
 
     // Nested mapping
-    // Track token balnces for a given account
+    // Track token balances for a given account
     // E.G. Dai: 0x6B175474E89094C44Da98b954EedeAC495271d0F
     // E.G. WETH: 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2
     mapping(address => mapping(address => uint)) public balances;
@@ -76,7 +76,6 @@ contract Mappings3 {
         delete myMapping[_id];
     }
 }
-
 
 // Getting and setting nested values
 contract Mappings4 {

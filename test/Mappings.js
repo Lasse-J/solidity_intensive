@@ -31,11 +31,15 @@ describe('Mappings', () => {
       const Contract = await ethers.getContractFactory('Mappings2')
       let contract = await Contract.deploy()
 
-      let result =  await contract.books(1)
+      let result = await contract.books(1)
       expect(result[0]).to.equal('A Tale of Two Cities')
       expect(result[1]).to.equal('Charles Dickens')
 
       // Homework: check book 2
+      let result2 = await contract.books(2)
+      expect(result2[0]).to.equal('Les Miserables')
+      expect(result2[1]).to.equal('Victor Hugo')
+
 
       let user1 = '0x3EcEf08D0e2DaD803847E052249bb4F8bFf2D5bB'
       let dai = '0x6B175474E89094C44Da98b954EedeAC495271d0F'

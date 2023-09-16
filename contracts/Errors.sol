@@ -31,7 +31,7 @@ contract Errors1 {
     function example4(uint _value) public {
         if (_value <= 10) {
             // You can add more arguments to this...
-            revert InvalidValue({value: _value });
+            revert InvalidValue({ value: _value });
         }
         emit Log("success");
     }

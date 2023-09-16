@@ -33,7 +33,7 @@ describe('Time Examples', () => {
       // Advance time past deposit start time + 1 second
       await time.increaseTo(depositStartTime + 1);
 
-      // Desposit
+      // Deposit
       await contract.deposit({ value: ether(1) })
       expect(await ethers.provider.getBalance(contract.address)).to.equal(ether(1))
 
@@ -43,7 +43,7 @@ describe('Time Examples', () => {
       // Advance time past withdraw start time + 1 second
       await time.increaseTo(withdrawStartTime + 1);
 
-      // Desposit
+      // Withdraw
       await contract.withdraw()
       expect(await ethers.provider.getBalance(contract.address)).to.equal(ether(0))
 
